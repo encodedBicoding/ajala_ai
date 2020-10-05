@@ -38,6 +38,7 @@ api = ajala.authorize('XXXXXXXXXXX')
 const ajala = require('ajala');
 
 let api = ajala.authorize('XXXXXXXXXXX');
+
 ```
 
 ```cpp
