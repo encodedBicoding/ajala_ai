@@ -1,11 +1,11 @@
 FROM ruby:2.6-slim
 
-WORKDIR /srv/slate
+WORKDIR /srv/ajala_ai
 
-VOLUME /srv/slate/source
+VOLUME /srv/ajala_ai/source
 EXPOSE 4567
 
-COPY . /srv/slate
+COPY . /srv/ajala_ai
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

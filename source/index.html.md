@@ -1,16 +1,14 @@
 ---
-title: API Reference
+title: Ajala AI
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
   - python
   - javascript
+  - c++
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
-
 includes:
   - errors
 
@@ -19,53 +17,143 @@ search: true
 code_clipboard: true
 ---
 
-# Introduction
-
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+## Get Help
+> Make sure to replace `XXXXXXXXXX` with your API key.
 
 ```shell
 # With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "http://api.ajala.ai/help"
+  -H "api_key: XXXXXXXXXXXXXXXXXXXXX"
+```
+
+```python
+import ajala
+
+api = ajala.authorize('XXXXXXXXXXX')
 ```
 
 ```javascript
-const kittn = require('kittn');
+const ajala = require('ajala');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = ajala.authorize('XXXXXXXXXXX');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+```cpp
+import ajala;
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+void main() {
+  var api = ajala.authorize('XXXXXXXXXXXXXX')
+}
+```
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+> The above command returns JSON structured like this:
 
-`Authorization: meowmeowmeow`
+```json
+{
+  "account_sid": "YYYYYYYYYYYY",
+  "api_version": "v1",
+  "date_created":"<UTC Time>",
+  "date_sent":"<UTC TIme>",
+  "error_code": null,
+  "error_message": null,
+  "status": "OK",
+  "asr":"/v1/asr",
+  "tts":"/v1/tts",
+  "data": {
+    "/v]/data": [
+      "/v1/data/language",
+      "/v1/data/audit"
+    ],
+  }
+}
+```
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+
+GET help TEXT GOES HERE
+
+## POST Audio Recording
+```shell
+# With shell, you can just pass the correct header with each request
+curl -H 'Content-Type: application/x-www-form-urlencoded' \
+-d '{"language": "<language>", 
+    "context":"<context>", 
+    "audioFile":"<encoded_audio_file>", 
+    "audioFrequency":"<sample_rate>", 
+    "transcription_id":"ZZZZZZZZZZZZZ", 
+    "API_KEY":"XXXXXXXXXXX", 
+    "ACCOUNT_SID":"YYYYYYYYYY"}' \ 
+  http://api.ajala.ai/v1/asr
+```
+
+```python
+import requests
+AJALA_API_URL = "http://api.ajala.ai/v1/asr"
+data = {
+  language: "<language>",
+  context: "<context>",
+  audioFile: "<encoded_audio_file>",
+  audioFrequency: "<sample_rate>",
+  transcription_id:"zzzzzzzzzzzzzzzzz",
+  API_KEY: "XXXXXXXXX",
+  ACCOUNT_SID: "YYYYYYYYYY"
+}
+
+response = requests.post(AJALA_API_URL, data)
+print(response.json())
+```
+
+```javascript
+const fetch = require('node-fetch');
+const AJALA_API_URL = "http://api.ajala.ai/v1/asr";
+const data = {
+  language: "<language>",
+  context: "<context>",
+  audioFile: "<encoded_audio_file>",
+  audioFrequency: "<sample_rate>",
+  transcription_id:"zzzzzzzzzzzzzzzzz",
+  API_KEY: "XXXXXXXXX",
+  ACCOUNT_SID: "YYYYYYYYYY"
+};
+
+fetch(AJALA_API_URL, data)
+.then(resp => resp.json())
+.then((result) => {
+  console.log(result);
+})
+
+```
+
+```cpp
+import ajala;
+
+void main() {
+  var api = ajala.authorize('XXXXXXXXXXXXXX')
+}
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "account_sid": "YYYYYYYYYYYY",
+  "api_version": "v1",
+  "date_created":"<UTC Time>",
+  "date_sent":"<UTC TIme>",
+  "error_code": null,
+  "error_message": null,
+  "status": "OK",
+  "hypothesis": [
+    {
+      "utterance": "utterance in specified language"
+    }
+  ],
+  "id":"873903cls-438jdieo933"
+}
+```
+POST TEXT GOES HERE
+
 
 # Kittens
 
