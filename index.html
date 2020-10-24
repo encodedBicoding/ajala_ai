@@ -279,7 +279,7 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-b3daec74.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-73cb8829.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-e9bde216.js"></script>
 
@@ -288,7 +288,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;c++&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;cpp&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -301,7 +301,7 @@
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
-              <a href="#" data-language-name="c++">c++</a>
+              <a href="#" data-language-name="cpp">cpp</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -320,16 +320,10 @@
               </ul>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#user-provisioning-service" class="toc-h1 toc-link" data-title="User Provisioning Service">User Provisioning Service</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
-                  </li>
-                  <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
-                  </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#post-tts" class="toc-h2 toc-link" data-title="Post TTS">Post TTS</a>
                   </li>
               </ul>
           </li>
@@ -338,7 +332,7 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='/login'>Sign Up for a Developer Key</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
@@ -384,7 +378,11 @@ curl <span class="s2">"http://api.ajala.ai/help"</span>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>GET help TEXT GOES HERE</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elementum imperdiet. Aliquam quis dapibus lorem. Aenean lacinia condimentum sem non pellentesque. Quisque sodales sagittis orci vel accumsan. Morbi quis lectus sed magna fringilla feugiat. Donec id porttitor nunc. Curabitur pellentesque eros ut dolor dictum, sit amet consectetur massa consequat. Maecenas luctus pulvinar aliquet. Ut malesuada orci vel nunc molestie congue. Proin tempor sed nulla ut sodales.</p>
+
+<p>Etiam dapibus mi sed tortor congue efficitur. Cras pharetra lacus et venenatis euismod. Integer vitae mattis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim ipsum cursus dui rutrum, vel sagittis ligula iaculis. Curabitur ultricies libero et tortor vulputate, in cursus turpis dignissim. In vitae pharetra metus, ac posuere enim. Nulla non malesuada nisl, a dictum magna. Pellentesque malesuada dapibus mi, fringilla luctus lorem. Pellentesque est velit, tincidunt ut lacinia faucibus, pharetra quis turpis. Nulla aliquam non enim id posuere. Pellentesque elementum est eu orci varius, ut bibendum urna tempor. Aenean ac accumsan diam. Vestibulum dictum mattis posuere.</p>
+
+<p>Vestibulum eget lectus efficitur, sollicitudin enim sed, eleifend augue. Pellentesque mattis odio vitae lacus feugiat maximus. Cras id rutrum augue. Donec ut pulvinar eros. Maecenas malesuada magna sit amet nisi dignissim, id accumsan augue imperdiet. Mauris pellentesque nunc sit amet libero efficitur tristique. Morbi in tellus leo. Donec finibus sapien orci. Morbi egestas ex vitae fermentum viverra. Etiam rhoncus faucibus tortor in rutrum. Sed id diam erat. Mauris euismod erat nec felis vestibulum, ac malesuada massa pellentesque. Pellentesque placerat odio mi, in consequat lacus sollicitudin a.</p>
 <h2 id='post-audio-recording'>POST Audio Recording</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="nt">-H</span> <span class="s1">'Content-Type: application/x-www-form-urlencoded'</span> <span class="se">\</span>
 <span class="nt">-d</span> <span class="s1">'{"language": "&lt;language&gt;", 
@@ -395,42 +393,148 @@ curl <span class="nt">-H</span> <span class="s1">'Content-Type: application/x-ww
     "API_KEY":"XXXXXXXXXXX", 
     "ACCOUNT_SID":"YYYYYYYYYY"}'</span> <span class="se">\ </span>
   http://api.ajala.ai/v1/asr
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">AJALA_API_URL</span> <span class="o">=</span> <span class="s">"http://api.ajala.ai/v1/asr"</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="n">language</span><span class="p">:</span> <span class="s">"&lt;language&gt;"</span><span class="p">,</span>
-  <span class="n">context</span><span class="p">:</span> <span class="s">"&lt;context&gt;"</span><span class="p">,</span>
-  <span class="n">audioFile</span><span class="p">:</span> <span class="s">"&lt;encoded_audio_file&gt;"</span><span class="p">,</span>
-  <span class="n">audioFrequency</span><span class="p">:</span> <span class="s">"&lt;sample_rate&gt;"</span><span class="p">,</span>
-  <span class="n">transcription_id</span><span class="p">:</span><span class="s">"zzzzzzzzzzzzzzzzz"</span><span class="p">,</span>
-  <span class="n">API_KEY</span><span class="p">:</span> <span class="s">"XXXXXXXXX"</span><span class="p">,</span>
-  <span class="n">ACCOUNT_SID</span><span class="p">:</span> <span class="s">"YYYYYYYYYY"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="err">​</span>
+<span class="n">ajala_url</span> <span class="o">=</span> <span class="s">"https://api.ajala.ai/v1/asr"</span>
+<span class="n">request_body</span> <span class="o">=</span> <span class="p">{</span><span class="s">"language"</span><span class="p">:</span><span class="s">"yorubaNG"</span><span class="p">,</span>
+                <span class="s">"context"</span><span class="p">:</span><span class="s">"conversational"</span><span class="p">,</span>
+                <span class="s">"audioFrequency"</span><span class="p">:</span><span class="s">"8000"</span><span class="p">,</span>
+                <span class="s">"API_KEY"</span><span class="p">:</span><span class="o">&lt;</span><span class="n">API_KEY</span><span class="o">&gt;</span><span class="p">}</span>
+<span class="err">​</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-Type'</span><span class="p">:</span><span class="s">'application/json'</span><span class="p">}</span>
+<span class="n">wav_file</span> <span class="o">=</span> <span class="s">"/path/to/wav/file"</span>
+<span class="n">audio_upload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'upload_file'</span><span class="p">:</span><span class="nb">open</span><span class="p">(</span><span class="n">wav_file</span><span class="p">,</span><span class="s">'rb'</span><span class="p">)}</span>
+<span class="err">​</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">ajala_url</span><span class="p">,</span><span class="n">json</span><span class="o">=</span><span class="n">request_body</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">files</span><span class="o">=</span><span class="n">audio_upload</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">transcription</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">function</span> <span class="nx">getAudioFile</span><span class="p">(</span><span class="nx">audioFileName</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">oReq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+    <span class="nx">oReq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span> <span class="nx">audioFileName</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="nx">oReq</span><span class="p">.</span><span class="nx">responseType</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">arraybuffer</span><span class="dl">"</span><span class="p">;</span>
+
+    <span class="nx">oReq</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">oEvent</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">arrayBuffer</span> <span class="o">=</span> <span class="nx">oReq</span><span class="p">.</span><span class="nx">response</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">arrayBuffer</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">byteArray</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Uint8Array</span><span class="p">(</span><span class="nx">arrayBuffer</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arrayBuffer</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">arrayBuffer</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="nx">oReq</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 <span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">function</span> <span class="nx">callASRAPI</span><span class="p">(</span><span class="nx">apiURL</span><span class="p">,</span> <span class="nx">audioFileBuffer</span><span class="p">){</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">AJALA_API_URL</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">fetch</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">node-fetch</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">AJALA_API_URL</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://api.ajala.ai/v1/asr</span><span class="dl">"</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">language</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;language&gt;</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">context</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;context&gt;</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">audioFile</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;encoded_audio_file&gt;</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">audioFrequency</span><span class="p">:</span> <span class="dl">"</span><span class="s2">&lt;sample_rate&gt;</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">transcription_id</span><span class="p">:</span><span class="dl">"</span><span class="s2">zzzzzzzzzzzzzzzzz</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">API_KEY</span><span class="p">:</span> <span class="dl">"</span><span class="s2">XXXXXXXXX</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">ACCOUNT_SID</span><span class="p">:</span> <span class="dl">"</span><span class="s2">YYYYYYYYYY</span><span class="dl">"</span>
+    <span class="c1">//Initiliaze httprequest</span>
+    <span class="kd">var</span> <span class="nx">Httpreq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+    <span class="nx">Httpreq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span><span class="nx">apiURL</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="c1">//Httpreq.withCredentials=true;</span>
+    <span class="c1">//Httpreq.setRequestHeader('Content-Type', 'audio/wav');</span>
+    <span class="nx">Httpreq</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)};</span>
+    <span class="nx">Httpreq</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">audioFileBuffer</span><span class="p">);</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Httpreq</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">var</span> <span class="nx">ajalaURL</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://api.ajala.ai/v1/asr</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">language</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">yorubaNG</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">properNames</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">audioFile</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">names.wav</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">API_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">API_KEY</span><span class="dl">"</span>
+<span class="err">​</span>
+<span class="nx">ajalaURL</span> <span class="o">=</span> <span class="nx">ajalaURL</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">?apikey=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">API_KEY</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;language=</span><span class="dl">"</span><span class="o">+</span><span class="nx">language</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;context=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">context</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajalaURL:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">ajalaURL</span><span class="p">)</span>
+<span class="err">​</span>
+<span class="nx">ab</span> <span class="o">=</span> <span class="nx">getAudioFile</span><span class="p">(</span><span class="nx">audioFile</span><span class="p">);</span>
+<span class="nx">callASRAPI</span><span class="p">(</span><span class="nx">ajalaURL</span><span class="p">,</span><span class="nx">ab</span><span class="p">);</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight cpp tab-cpp"><code><span class="cp">#include "json/rapidjson.h"
+#include "json/document.h"
+#include "curl/curl.h"
+#include &lt;sstream&gt;
+</span><span class="err">​</span>
+<span class="k">struct</span> <span class="nc">string</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+    <span class="kt">size_t</span> <span class="n">len</span><span class="p">;</span>
 <span class="p">};</span>
+<span class="err">​</span>
+<span class="kt">void</span> <span class="nf">init_string</span><span class="p">(</span><span class="k">struct</span> <span class="nc">string</span> <span class="o">*</span><span class="n">s</span><span class="p">){</span>
+    <span class="n">s</span><span class="o">-&gt;</span><span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">len</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">){</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="s">"malloc() failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kt">size_t</span> <span class="nf">writefunc</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">nmemb</span><span class="p">,</span> <span class="k">struct</span> <span class="nc">string</span> <span class="o">*</span><span class="n">s</span><span class="p">){</span>
+    <span class="kt">size_t</span> <span class="n">new_len</span> <span class="o">=</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">len</span> <span class="o">+</span> <span class="n">size</span><span class="o">*</span><span class="n">nmemb</span><span class="p">;</span>
+    <span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">realloc</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">,</span> <span class="n">new_len</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="o">==</span><span class="nb">NULL</span><span class="p">){</span>
+            <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="s">"malloc() failed</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+            <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="o">+</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">len</span><span class="p">,</span><span class="n">ptr</span><span class="p">,</span><span class="n">size</span><span class="o">*</span><span class="n">nmemb</span><span class="p">);</span>
+    <span class="n">s</span><span class="o">-&gt;</span><span class="n">ptr</span><span class="p">[</span><span class="n">new_len</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>
+    <span class="n">s</span><span class="o">-&gt;</span><span class="n">len</span> <span class="o">=</span> <span class="n">new_len</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">size</span><span class="o">*</span><span class="n">nmemb</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+<span class="err">​</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ajalaURL</span> <span class="o">=</span> <span class="s">"http://api.ajala.ai/v1/asr"</span><span class="p">;</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">wavPath</span> <span class="o">=</span> <span class="s">"/path/to/wav/file/for/transcription"</span><span class="p">;</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">requestFields</span> <span class="o">=</span> <span class="s">"language=&lt;lang&gt;&amp;context=&lt;ctxt&gt;&amp;audioFrequency=&lt;freq&gt;&amp;API_KEY=&lt;API_KEY&gt;"</span><span class="p">;</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="nx">AJALA_API_URL</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">resp</span> <span class="o">=&gt;</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">json</span><span class="p">())</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
-<span class="p">})</span>
+    <span class="n">CURL</span> <span class="o">*</span><span class="n">curl</span><span class="p">;</span>
+    <span class="n">CURLcode</span> <span class="n">res</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="nc">stat</span> <span class="n">fileInfo</span><span class="p">;</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fd</span><span class="p">;</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight cpp tab-cpp"><code><span class="n">import</span> <span class="n">ajala</span><span class="p">;</span>
+    <span class="c1">//Read audio file from local store</span>
+    <span class="n">fd</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">wavPath</span><span class="p">,</span><span class="s">"rb"</span><span class="p">);</span>
+    <span class="n">curl</span> <span class="o">=</span> <span class="n">curl_easy_init</span><span class="p">();</span>
 
-<span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">var</span> <span class="n">api</span> <span class="o">=</span> <span class="n">ajala</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="err">'</span><span class="n">XXXXXXXXXXXXXX</span><span class="err">'</span><span class="p">)</span>
+    <span class="c1">//Initialize struct string to capture json response</span>
+    <span class="k">struct</span> <span class="nc">string</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">init_string</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="c1">//Configure curl to execute POST request</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_URL</span><span class="p">,</span> <span class="n">ajalaURL</span><span class="p">);</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_UPLOAD</span><span class="p">,</span> <span class="mi">1L</span><span class="p">);</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_READDATA</span><span class="p">,</span><span class="n">fd</span><span class="p">);</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_POSTFIELDS</span><span class="p">,</span><span class="n">requestFields</span><span class="p">);</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_POSTFIELDSIZE</span><span class="p">,</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">strlen</span><span class="p">(</span><span class="n">requestFields</span><span class="p">));</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_VERBOSE</span><span class="p">,</span><span class="mi">1L</span><span class="p">);</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_WRITEFUNCTION</span><span class="p">,</span><span class="n">writefunc</span><span class="p">);</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_WRITEDATA</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+
+         <span class="c1">//Execute POST request</span>
+         <span class="n">res</span> <span class="o">=</span> <span class="n">curl_easy_perform</span><span class="p">(</span><span class="n">curl</span><span class="p">);</span>
+
+         <span class="k">if</span><span class="p">(</span><span class="n">res</span><span class="o">==</span><span class="n">CURLE_OK</span><span class="p">){</span>
+             <span class="c1">//Initialize JSON document to receive results of POST request</span>
+             <span class="n">rapidjson</span><span class="o">::</span><span class="n">Document</span> <span class="n">aDoc</span><span class="p">;</span>
+             <span class="n">aDoc</span><span class="p">.</span><span class="n">Parse</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">ptr</span><span class="p">);</span>
+
+             <span class="c1">//Parse JSON response</span>
+             <span class="p">...</span>
+         <span class="p">}</span>
+        <span class="n">curl_easy_cleanup</span><span class="p">(</span><span class="n">curl</span><span class="p">);</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">ptr</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">curl_easy_cleanup</span><span class="p">(</span><span class="n">curl</span><span class="p">);</span>
+        <span class="n">fclose</span><span class="p">(</span><span class="n">fd</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <blockquote>
@@ -452,157 +556,150 @@ curl <span class="nt">-H</span> <span class="s1">'Content-Type: application/x-ww
   </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"873903cls-438jdieo933"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>POST TEXT GOES HERE</p>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elementum imperdiet. Aliquam quis dapibus lorem. Aenean lacinia condimentum sem non pellentesque. Quisque sodales sagittis orci vel accumsan. Morbi quis lectus sed magna fringilla feugiat. Donec id porttitor nunc. Curabitur pellentesque eros ut dolor dictum, sit amet consectetur massa consequat. Maecenas luctus pulvinar aliquet. Ut malesuada orci vel nunc molestie congue. Proin tempor sed nulla ut sodales.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p>Etiam dapibus mi sed tortor congue efficitur. Cras pharetra lacus et venenatis euismod. Integer vitae mattis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim ipsum cursus dui rutrum, vel sagittis ligula iaculis. Curabitur ultricies libero et tortor vulputate, in cursus turpis dignissim. In vitae pharetra metus, ac posuere enim. Nulla non malesuada nisl, a dictum magna. Pellentesque malesuada dapibus mi, fringilla luctus lorem. Pellentesque est velit, tincidunt ut lacinia faucibus, pharetra quis turpis. Nulla aliquam non enim id posuere. Pellentesque elementum est eu orci varius, ut bibendum urna tempor. Aenean ac accumsan diam. Vestibulum dictum mattis posuere.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
+<p>Vestibulum eget lectus efficitur, sollicitudin enim sed, eleifend augue. Pellentesque mattis odio vitae lacus feugiat maximus. Cras id rutrum augue. Donec ut pulvinar eros. Maecenas malesuada magna sit amet nisi dignissim, id accumsan augue imperdiet. Mauris pellentesque nunc sit amet libero efficitur tristique. Morbi in tellus leo. Donec finibus sapien orci. Morbi egestas ex vitae fermentum viverra. Etiam rhoncus faucibus tortor in rutrum. Sed id diam erat. Mauris euismod erat nec felis vestibulum, ac malesuada massa pellentesque. Pellentesque placerat odio mi, in consequat lacus sollicitudin a.</p>
+<h1 id='user-provisioning-service'>User Provisioning Service</h1><h2 id='post-tts'>Post TTS</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="err">​</span>
+<span class="n">ajala_url</span> <span class="o">=</span> <span class="s">"https://api.ajala.ai/v1/tts"</span>
+<span class="n">text_to_synthesize</span> <span class="o">=</span> <span class="s">"ògbójú ode ninu igbó irúnmanlẹ̀"</span>
+<span class="n">request_body</span> <span class="o">=</span> <span class="p">{</span><span class="s">"language"</span><span class="p">:</span><span class="s">"yorubaNG"</span><span class="p">,</span>
+                <span class="s">"speakerGender"</span><span class="p">:</span><span class="s">"female"</span><span class="p">,</span>
+                <span class="s">"source_text"</span><span class="p">:</span><span class="n">text_to_synthesize</span><span class="p">,</span>
+                <span class="s">"API_KEY"</span><span class="p">:</span><span class="o">&lt;</span><span class="n">API_KEY</span><span class="o">&gt;</span><span class="p">}</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-Type'</span><span class="p">:</span><span class="s">'application/json'</span><span class="p">}</span>
+<span class="err">​</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">ajala_url</span><span class="p">,</span><span class="n">json</span><span class="o">=</span><span class="n">request_body</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">synthesized_audio</span> <span class="o">=</span> <span class="n">json</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'synthesized_audio.wav'</span><span class="p">,</span><span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">base64</span><span class="p">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">synthesized_audio</span><span class="p">[</span><span class="s">"data"</span><span class="p">][</span><span class="s">"sound_base64"</span><span class="p">]))</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">function</span> <span class="nx">callTTSAPI</span><span class="p">(</span><span class="nx">apiURL</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">XMLHttpRequest</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">xmlhttprequest</span><span class="dl">"</span><span class="p">).</span><span class="nx">XMLHttpRequest</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">Httpreq</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+    <span class="nx">Httpreq</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">GET</span><span class="dl">"</span><span class="p">,</span><span class="nx">apiURL</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+    <span class="nx">Httpreq</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">Httpreq</span><span class="p">.</span><span class="nx">responseText</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kd">var</span> <span class="nx">ajalaURL</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">http://api.ajala.ai/v1/tts</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">speakerGender</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">male</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">language</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">swahiliKen</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">text_to_synthesize</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Jina lako nani?</span><span class="dl">"</span>
+<span class="kd">var</span> <span class="nx">API_KEY</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">API_KEY</span><span class="dl">"</span>
+<span class="err">​</span>
+<span class="nx">ajalaURL</span> <span class="o">=</span> <span class="nx">ajalaURL</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">?apikey=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">API_KEY</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;language=</span><span class="dl">"</span><span class="o">+</span><span class="nx">language</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">&amp;context=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">context</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">ajalaURL:</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">ajalaURL</span><span class="p">)</span>
+<span class="err">​</span>
+<span class="kd">var</span> <span class="nx">jsonResponse</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">callTTSAPI</span><span class="p">(</span><span class="nx">ajalaURL</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">jsonResponse</span><span class="p">.</span><span class="nx">success</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight cpp tab-cpp"><code><span class="c1">//Helper function</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">replaceURLWhitespace</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">aString</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">aString</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span><span class="o">!=</span><span class="n">aString</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="o">==</span><span class="sc">' '</span><span class="p">){</span>
+            <span class="o">*</span><span class="n">it</span><span class="o">=</span><span class="sc">'+'</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">aString</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">​</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">ajalaURL</span> <span class="o">=</span> <span class="s">"http://api.ajala.ai/v1/tts"</span><span class="p">;</span>
+
+    <span class="c1">//Kiswahili example</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">text_to_synthesize</span> <span class="o">=</span> <span class="s">"Jina lako nani?"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">speakerGender</span><span class="p">,</span> <span class="n">audioFormat</span><span class="p">,</span> <span class="n">language</span><span class="p">,</span> <span class="n">API_KEY</span><span class="p">,</span> <span class="n">transcriptURL</span><span class="p">,</span> <span class="n">postFields</span><span class="p">;</span>
+
+    <span class="n">speakerGender</span> <span class="o">=</span> <span class="s">"male"</span><span class="p">;</span>
+    <span class="n">language</span> <span class="o">=</span> <span class="s">"swahiliKen"</span><span class="p">;</span>
+    <span class="n">audioFormat</span> <span class="o">=</span> <span class="s">"wav"</span><span class="p">;</span>
+    <span class="n">API_KEY</span> <span class="o">=</span> <span class="s">"XXXXXXXXXXXX"</span><span class="p">;</span>
+    <span class="n">wavPath</span> <span class="o">=</span> <span class="s">"/path/to/save/audio/file/response/to/request/name.wav"</span><span class="p">;</span>
+
+    <span class="n">text_to_synthesize</span> <span class="o">=</span> <span class="n">replaceWhitespaceForURL</span><span class="p">(</span><span class="n">text_to_synthesize</span><span class="p">);</span>
+    <span class="n">postFields</span> <span class="o">=</span> <span class="s">"&amp;language="</span> <span class="o">+</span> <span class="n">language</span> <span class="o">+</span> <span class="s">"&amp;text="</span> <span class="o">+</span> <span class="n">text_to_synthesize</span> <span class="o">+</span> <span class="s">"&amp;gender="</span> <span class="o">+</span> <span class="n">speakerGender</span> <span class="o">+</span> <span class="s">"&amp;fmt="</span> <span class="o">+</span> <span class="n">audioFormat</span> <span class="o">+</span> <span class="s">"&amp;API_KEY="</span> <span class="o">+</span> <span class="n">API_KEY</span><span class="p">;</span>
+    <span class="n">ajalaURL</span> <span class="o">+=</span> <span class="n">postFields</span><span class="p">;</span>
+
+    <span class="n">CURL</span> <span class="o">*</span><span class="n">curl</span><span class="p">;</span>
+    <span class="n">CURLcode</span> <span class="n">res</span><span class="p">;</span>
+
+    <span class="n">curl_global_init</span><span class="p">(</span><span class="n">CURL_GLOBAL_ALL</span><span class="p">);</span>
+    <span class="n">curl</span> <span class="o">=</span> <span class="n">curl_easy_init</span><span class="p">();</span>
+
+    <span class="nl">try:</span><span class="p">{</span>
+        <span class="k">struct</span> <span class="nc">string</span> <span class="n">s</span><span class="p">;</span>
+        <span class="n">init_string</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span><span class="n">CURLOPT_URL</span><span class="p">,</span> <span class="n">ajalaURL</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_WRITEFUNCTION</span><span class="p">,</span><span class="n">writefunc</span><span class="p">);</span>
+        <span class="n">curl_easy_setopt</span><span class="p">(</span><span class="n">curl</span><span class="p">,</span> <span class="n">CURLOPT_WRITEDATA</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="err">​</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">curl_easy_perform</span><span class="p">(</span><span class="n">curl</span><span class="p">);</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">res</span> <span class="o">==</span> <span class="n">CURLE_OK</span><span class="p">){</span>
+            <span class="n">rapidjson</span><span class="o">::</span><span class="n">Document</span> <span class="n">aDoc</span><span class="p">;</span>
+            <span class="n">aDoc</span><span class="p">.</span><span class="n">Parse</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">ptr</span><span class="p">);</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">aDoc</span><span class="p">.</span><span class="n">IsObject</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">aDoc</span><span class="p">.</span><span class="n">HasMember</span><span class="p">(</span><span class="s">"success"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">aDoc</span><span class="p">.</span><span class="n">HasMember</span><span class="p">(</span><span class="s">"data"</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">aDoc</span><span class="p">[</span><span class="s">"success"</span><span class="p">].</span><span class="n">IsTrue</span><span class="p">()){</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">decodedAudio</span> <span class="o">=</span> <span class="s">" "</span><span class="p">;</span>
+<span class="err">​</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">aDoc</span><span class="p">[</span><span class="s">"data"</span><span class="p">][</span><span class="s">"sound_base64"</span><span class="p">].</span><span class="n">IsString</span><span class="p">()){</span>
+                    <span class="c1">//Decode audio to make playable</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">encodedAudio</span> <span class="o">=</span> <span class="n">aDoc</span><span class="p">[</span><span class="s">"data"</span><span class="p">][</span><span class="s">"sound_base64"</span><span class="p">].</span><span class="n">GetString</span><span class="p">();</span>
+                    <span class="n">decodedAudio</span> <span class="o">=</span> <span class="n">base64_decode</span><span class="p">(</span><span class="n">encodedAudio</span><span class="p">);</span>
+<span class="err">​</span>
+                    <span class="c1">//Save decoded audio file &amp; play</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">ofstream</span> <span class="n">supp_info_output</span><span class="p">(</span><span class="n">wavPath</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">out</span> <span class="o">|</span> <span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
+                    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">stringLen</span> <span class="o">=</span> <span class="n">decodedAudio</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+                    <span class="n">supp_info_output</span><span class="p">.</span><span class="n">write</span><span class="p">((</span><span class="kt">char</span><span class="o">*</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">stringLen</span><span class="p">),</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">stringLen</span><span class="p">));</span>
+                    <span class="n">supp_info_output</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">decodedAudio</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span><span class="n">decodedAudio</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>
+                    <span class="n">supp_info_output</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">ptr</span><span class="p">);</span>
+        <span class="n">curl_easy_cleanup</span><span class="p">(</span><span class="n">curl</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">curl_easy_cleanup</span><span class="p">(</span><span class="n">curl</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span>
+<span class="p">}</span>
+
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"account_sid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yyyyyyyyyyyyy"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"api_version"</span><span class="p">:</span><span class="s2">"v1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date_created"</span><span class="p">:</span><span class="s2">"&lt;UTC_Date&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"date_sent"</span><span class="p">:</span><span class="s2">"&lt;UTC_Date&gt;"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sound_base64"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UkaGlagha8js"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"voice"</span><span class="p">:</span><span class="s2">"Yoruba Nigerian Male"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
-<h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia elementum imperdiet. Aliquam quis dapibus lorem. Aenean lacinia condimentum sem non pellentesque. Quisque sodales sagittis orci vel accumsan. Morbi quis lectus sed magna fringilla feugiat. Donec id porttitor nunc. Curabitur pellentesque eros ut dolor dictum, sit amet consectetur massa consequat. Maecenas luctus pulvinar aliquet. Ut malesuada orci vel nunc molestie congue. Proin tempor sed nulla ut sodales.</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p>Etiam dapibus mi sed tortor congue efficitur. Cras pharetra lacus et venenatis euismod. Integer vitae mattis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim ipsum cursus dui rutrum, vel sagittis ligula iaculis. Curabitur ultricies libero et tortor vulputate, in cursus turpis dignissim. In vitae pharetra metus, ac posuere enim. Nulla non malesuada nisl, a dictum magna. Pellentesque malesuada dapibus mi, fringilla luctus lorem. Pellentesque est velit, tincidunt ut lacinia faucibus, pharetra quis turpis. Nulla aliquam non enim id posuere. Pellentesque elementum est eu orci varius, ut bibendum urna tempor. Aenean ac accumsan diam. Vestibulum dictum mattis posuere.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  <span class="nt">-X</span> DELETE
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre></div>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
+<p>Vestibulum eget lectus efficitur, sollicitudin enim sed, eleifend augue. Pellentesque mattis odio vitae lacus feugiat maximus. Cras id rutrum augue. Donec ut pulvinar eros. Maecenas malesuada magna sit amet nisi dignissim, id accumsan augue imperdiet. Mauris pellentesque nunc sit amet libero efficitur tristique. Morbi in tellus leo. Donec finibus sapien orci. Morbi egestas ex vitae fermentum viverra. Etiam rhoncus faucibus tortor in rutrum. Sed id diam erat. Mauris euismod erat nec felis vestibulum, ac malesuada massa pellentesque. Pellentesque placerat odio mi, in consequat lacus sollicitudin a.</p>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
 <table><thead>
 <tr>
 <th>Error Code</th>
@@ -661,7 +758,7 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
                 <a href="#" data-language-name="shell">shell</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
-                <a href="#" data-language-name="c++">c++</a>
+                <a href="#" data-language-name="cpp">cpp</a>
           </div>
       </div>
     </div>
