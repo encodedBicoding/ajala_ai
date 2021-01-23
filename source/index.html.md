@@ -7,10 +7,10 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
   - cpp
 
-toc_footers:
-  - <a href='/login'>Sign Up for a Developer Key</a>
-includes:
-  - errors
+# toc_footers:
+#   - <a href='/login'>Sign Up for a Developer Key</a>
+# includes:
+#   - errors
 
 search: true
 
